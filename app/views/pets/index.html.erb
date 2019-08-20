@@ -1,0 +1,16 @@
+<h1>Pets</h1>
+<% @pets.each do |pet| %>
+  <%= link_to pet_path(pet) do %>
+    <div>
+      <h2><%= pet.name %></h2>
+      <p><%= pet.species %></p>
+      <p>Found on <%= pet.found_on %> at <%= pet.address %></p>
+    </div>
+  <% end %>
+<% end %>
+<!-- Pq dentro da iteração usamos pet, e não @pet?
+Simples, pois no nosso .each do, usamos o nome
+de variável pet, sem @. Só é necessário usar @
+em uma variable definida no controller que será
+usada na view. -->
+<h2><%= link_to "Add a Pet", pets_new_path %></h2>

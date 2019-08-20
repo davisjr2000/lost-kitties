@@ -1,0 +1,21 @@
+<div class="container">
+  <%= simple_form_for(@pet, html: { class: 'form-inline' }) do |f| %>
+    <div class="form-group">
+      <%= f.input :name %>
+    </div>
+    <div class="form-group">
+      <%= f.input :address %>
+    </div>
+    <div class="form-group">
+      <%= f.input :found_on %>
+    </div>
+    <div class="form-group">
+      <%= f.input :species %>
+    </div>
+    <%= f.submit class: "btn btn-success" %>
+  <% end %>
+</div>
+
+<!--  Como estamos usando o mesmo form em pets#new e pets#edit,
+ podemos colocar o código do form em um partial, criando
+ a file com um underline _ antes: _file.html.erb -->

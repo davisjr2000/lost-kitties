@@ -1,0 +1,11 @@
+<h1><%= @pet.name %></h1>
+<h2><%= @pet.species.capitalize %></h2>
+<p>Found on <%= @pet.found_on %> at <%= @pet.address %></p>
+<%= link_to "Edit", edit_pet_path(@pet) %>
+
+<!-- # Pet_path pode ser tanto o pets#show quanto o pets#destroy (ver rotas)
+Para linkar com pets#destroy, temos que indicar isso de acordo
+com o verbo usado em routes.rb, usando method: :delete -->
+
+<%= link_to "Delete", pet_path, method: :delete, data: { confirm: "Are you sure? :c"} %>
+<%= link_to "Back to pets", pets_path %>
